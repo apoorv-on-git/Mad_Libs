@@ -20,12 +20,11 @@ def madlibs_theme():
 
 	#Choosing a random theme from the designated folder.
 	
-	path = raw_input('Enter a path for the themes of the stories - ')
-	random_choice = random.choice(os.listdir(path))
+	random_choice = random.choice(os.listdir('./Themes'))
 
 	#Changing the directory of the python program as the program is situated in a different directory.
 	
-	cd = os.chdir(path)
+	cd = os.chdir('./Themes')
 	f = open(random_choice, 'r')
 
 	#To filter the title of the theme.
@@ -36,10 +35,9 @@ def madlibs_theme():
 
 	story = [split_story[0], split_story[1].split(' ')]
 
-	print ("We have selected {} theme for you").format(story[0])
+	print ("We have selected {} theme for you".format(story[0]))
 
 	#Calling another function.
-
 	input_dictionary()
 
 #Function defined to take the input from the user.
@@ -63,7 +61,7 @@ def input_dictionary():
 
 			#While loop so user doesn't leaves the input blank.
 			while len(value) == 0:
-				value = raw_input("Please enter a {} -> ".format(i))
+				value = input("Please enter a {} -> ".format(i))
 			dictionary[i] = value
 	
 	#Calling another function.
